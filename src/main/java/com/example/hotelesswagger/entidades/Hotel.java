@@ -8,12 +8,11 @@ import java.util.List;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "Hotel")
 public class Hotel {
     @Id
-    @GeneratedValue(strategy = IDENTITY)
-    @Column(name = "idhotel")
-    private int idhotel;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+    private int id;
 
     @Column(name = "nombre")
     private String nombre;
@@ -44,12 +43,12 @@ public class Hotel {
         this.localidad = localidad;
     }
 
-    public int getIdhotel() {
-        return idhotel;
+    public int getId() {
+        return id;
     }
 
     public void setIdhotel(int idhotel) {
-        this.idhotel = idhotel;
+        this.id = idhotel;
     }
 
     public String getNombre() {
@@ -103,7 +102,7 @@ public class Hotel {
     @Override
     public String toString() {
         return "Hotel{" +
-                "idhotel=" + idhotel +
+                "idhotel=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", categoria='" + categoria + '\'' +

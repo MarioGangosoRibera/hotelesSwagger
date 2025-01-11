@@ -11,7 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/hotels")
+@RequestMapping("api/hoteles")
 public class HotelController {
     private final HotelServices hotelServices;
 
@@ -20,10 +20,10 @@ public class HotelController {
     }
 
     @GetMapping("/")
-    public List<Hotel> getAllHoteles(){
-        try{
+    public List<Hotel> getAllHoteles() {
+        try {
             return hotelServices.findAllHoteles();
-        }catch (Exception e){
+        } catch (Exception e) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Error al obtener todos los hoteles", e);
         }
     }

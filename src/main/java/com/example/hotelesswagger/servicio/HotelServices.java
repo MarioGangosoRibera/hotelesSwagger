@@ -65,7 +65,7 @@ public class HotelServices {
 
     //Habitaciones libres de un hotel
     public List<Habitacion> buscarHabitacionesLibres(int hotelId, int tamano, double precioMin, double precioMax){
-        return habitacionRepository.findByHotelIdAndTamanoAndPrecioBetween(hotelId, tamano, precioMin, precioMax);
+        return habitacionRepository.findByHotel_IdAndTamanoAndPrecioPorNocheBetween(hotelId, tamano, precioMin, precioMax);
     }
 
     //Todos los hoteles
